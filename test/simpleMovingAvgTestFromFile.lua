@@ -11,7 +11,7 @@ autoVerify = arg[2] or false
 
 dataFile = io.open(file, "r")
 if (autoVerify) then
-  resultFile = io.open("test\\resultFile.txt", "r")
+  resultFile = io.open("testResult.txt", "r")
 end
 
 repeat
