@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Methods">Methods</a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><strong>simpleMovingAvg</strong></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>simpleMovingAvg</code></h1>
+<p>Simple Moving Average Filter
+<p> This file contains a lua class for a Simple Moving Average Filter as
+ described here:
+   http://en.wikipedia.org/wiki/Moving_average#Simple_moving_average
+<p> The class is instantiated (<a href="index.html#simpleMovingAvg:new">new</a>) with the number of elements to include in the
+ average.</p>
+<p>  Then the <a href="index.html#simpleMovingAvg:update">update</a> function is called with each new value to
+ input to the filter.
+ </p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: Troy Manary</li>
+    </ul>
+
+
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#simpleMovingAvg:new">simpleMovingAvg:new (Number)</a></td>
+	<td class="summary">Constructor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#simpleMovingAvg:reset">simpleMovingAvg:reset (value)</a></td>
+	<td class="summary">Removes all history from filter and sets the current value.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#simpleMovingAvg:update">simpleMovingAvg:update (value)</a></td>
+	<td class="summary">Update the filter with a new input value and return the current filter value.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#simpleMovingAvg:getValue">simpleMovingAvg:getValue ()</a></td>
+	<td class="summary">Return the current filter value.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#simpleMovingAvg:print">simpleMovingAvg:print ()</a></td>
+	<td class="summary">Print the current filter value</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "simpleMovingAvg:new"></a>
+    <strong>simpleMovingAvg:new (Number)</strong>
+    </dt>
+    <dd>
+    Constructor
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">Number</span>
+         of Elements to include in the simple moving average.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        pointer to self
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example"><span class="keyword">local</span> sma = simpleMovingAvg.new(<span class="number">10</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "simpleMovingAvg:reset"></a>
+    <strong>simpleMovingAvg:reset (value)</strong>
+    </dt>
+    <dd>
+    Removes all history from filter and sets the current value.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+         a new value to initialize the filter
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        nothing
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">sma:reset(<span class="number">3.14</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "simpleMovingAvg:update"></a>
+    <strong>simpleMovingAvg:update (value)</strong>
+    </dt>
+    <dd>
+    Update the filter with a new input value and return the current filter value.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+         a new value to initialize the filter
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        current: filtered value over the specified number of elements.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">newVal = sma:update(<span class="number">17.112</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "simpleMovingAvg:getValue"></a>
+    <strong>simpleMovingAvg:getValue ()</strong>
+    </dt>
+    <dd>
+    Return the current filter value.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        average current filtered value over the specified number of elements.
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">newVal = sma:getValue()</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "simpleMovingAvg:print"></a>
+    <strong>simpleMovingAvg:print ()</strong>
+    </dt>
+    <dd>
+    Print the current filter value
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        nothing
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">sma:<span class="global">print</span>()</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-02-11 14:34:41 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
